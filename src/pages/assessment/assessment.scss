@@ -1,0 +1,205 @@
+
+page-assessment {
+  ion-header {
+    .toolbar-background, .toolbar-background-md {
+      background-color: #7eb8ff !important;
+    }
+
+    .toolbar-title, .toolbar-title-md {
+      color: #fff;
+    }
+  
+    ion-icon {
+      color: #fff;
+    }
+  }
+
+  .question-progress {
+    height: 3px;
+    width: 100%;
+    background-color: rgb(222,222,222);
+
+    .progress {
+      height: 100%;
+      background-color: color($colors, primary);
+    }
+  }
+
+  .questions {
+    padding: 20px 30px 80px 30px;
+
+    .group {
+      margin-bottom: 20px;
+
+      .description {
+        padding: 10px 0;
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+
+        u {
+          font-weight: bold;
+        }
+      }
+
+      @media screen and (max-height: 500px) {
+        .description {
+          font-size: 1.4rem;
+        }
+      }  
+
+      p {
+        margin-top: 2px;
+        margin-bottom: 2px;
+        padding-left: 8px;
+        padding-top: 4px;
+        padding-right: 8px;
+        padding-bottom: 4px;
+        border-left: solid 10px #7eb8ff;
+        border-top: solid 1px #7eb8ff;
+        border-bottom: solid 1px #7eb8ff;
+        border-right: solid 1px #7eb8ff;
+        font-size: 1.6rem;
+      }
+
+      @media screen and (max-height: 500px) {
+        p {
+          font-size: 1.4rem;
+        }
+      }
+
+      .answers {
+        ion-item {
+          padding-left: 2px;
+          padding-right: 2px;
+
+          font-size: 1.6rem;
+          border-top: none !important;
+
+          ion-radio {
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+
+    .diagnosis {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .result {
+    padding: 20px 0;
+    text-align: center;
+
+    img.illustration {
+      max-height: 40%;
+      max-width: 50%;
+      margin: 0 0;
+      z-index: 0;
+    }
+
+    p {
+      margin: 0 0 10px 0;
+      padding: 0 40px;
+      font-size: 1.6rem;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    @media screen and (max-height: 500px) {
+      p {
+        font-size: 1.4rem;
+      }
+    }
+
+    .illustration {
+      height: 200px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 50% 50%;
+    }
+
+    @media screen and (max-height: 500px) {
+      .illustration {
+        height: 150px;
+      }
+    }
+
+    .illustration-result1 {
+      background-image: url("../assets/imgs/assessment_1.png");
+    }
+
+    .illustration-result2 {
+      background-image: url("../assets/imgs/assessment_2.png");
+    }
+  }
+
+  .result1 {
+    b {
+      font-size: 2.0rem;
+      text-shadow: #000 1px 1px 1px,
+                   #000 -1px 1px 0px,
+                   #000 1px -1px 0px,
+                   #000 -1px -1px 0px
+    }
+
+    b.danger {
+      color: #ed1a3d;
+    }
+
+    b.warning {
+      color: #ffd400;
+    }
+
+    b.health {
+      color: #7eb8ff;
+    }
+
+    table {
+      margin: 0 auto 20px auto;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      text-align: left; 
+      
+      td {
+        padding: 0;
+      }
+    }
+  }
+
+  .result2 {
+    table {
+      margin: 0 auto;
+      font-size: 1.5rem;
+      line-height: 1.8;
+      text-align: left;
+      
+      td {
+        padding: 0 10px;
+      }
+
+      .point {
+        text-align: right;
+      }
+    }
+  }
+
+  ion-footer {
+    .toolbar-background {
+      background-color: transparent;
+    }
+
+    h6 {
+      font-size: 1.2rem;
+      text-align: center;
+      color: #666;
+    }
+
+    @media screen and (max-height: 500px) {
+      h6 {
+        font-size: 1.0rem;
+      }
+    }
+  }
+}

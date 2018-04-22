@@ -1,0 +1,168 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title><span [innerHTML]="title"></span></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-slides #slides
+    pager="true"
+    (ionSlideDidChange)="onSlideDidChange($event)">
+
+    <ion-slide>
+      <div class="illustration illustration-app"></div>
+      <div class="description">
+        <p>
+          レジリエンスは精神的な耐久力や回復力とも言われ、その向上は精神的な体力を増進し、仕事や勉強のパフォーマンス向上につながります。
+        </p>
+        <p>
+          「<span class="app-name">レジトレ！</span>」は、科学的な根拠が実証されたiCBT （インターネット認知行動療法）メソッドによるレジリエンスをトレーニングするスマートフォンアプリです。
+        </p>
+      </div>
+      <div class="swipe-hint"><ion-icon name="arrow-back" color="primary"></ion-icon></div>
+    </ion-slide>
+
+    <ion-slide>
+      <p>
+        トレーニングの基本をチャット形式で学んで…
+      </p>
+      <div class="app-illustration app-illustration-1"></div>
+    </ion-slide>
+
+    <ion-slide>
+      <p>
+        ワークシートでトレーニング！
+      </p>
+      <div class="app-illustration app-illustration-2"></div>
+    </ion-slide>
+
+    <ion-slide>
+      <p>
+          レジリエンスを高められます。
+      </p>
+      <div class="app-message">
+        <div class="message">スマホで<br>スマートにね！</div>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="illustration illustration-aim"></div>
+      <div class="description">
+        <p>
+          「<span class="app-name">レジトレ！</span>」は、スマホで簡単かつ確実にレジリエンスを向上させることを目指しています。
+        </p>
+        <p>
+          このトライアルは、大学生の皆さんを対象として、スマホによるレジリエンス向上の科学的根拠を詳しく検証し、より効果的な健康増進プログラムを開発するためのものです。
+        </p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="illustration illustration-use"></div>
+      <div class="description">
+        <p>
+          「<span class="app-name">レジトレ！</span>」は、京都大学が実施する「ヘルシーキャンパストライアル」に参加することで利用できます。
+        </p>
+        <p>
+          また参加するためには、京都大学健康科学センターで行う説明会で詳しい説明を受けた上で、研究同意書にサインしていただく必要があります。
+        </p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="illustration illustration-term"></div>
+      <div class="description">
+        <p>
+          「<span class="app-name">レジトレ！</span>」を利用していただくトライアルは約8週間続きます。トライアル終了後も1ヶ月ごとに、そして最終的には12ヶ月後にアプリ上で様子をご報告いただきます。
+        </p>
+        <p>
+          これにかかるお時間と労力に対して、4週間目に1000円、8週間目と12ヶ月目にそれぞれ2000円相当の謝金をアマゾンギフト券などでお支払いします。
+        </p>
+      </div>
+    </ion-slide>
+  
+    <ion-slide>
+      <div class="illustration illustration-passing"></div>
+      <div class="description">
+        <p>
+          なお、アプリのキャパシティおよび予算の関係から、『<span class="app-name">レジトレ！</span>』をご利用いただける人数に限りがありますので、アンケート結果に応じて一部の方々に説明会へのご案内をお出しします。
+        </p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="illustration illustration-check"></div>
+      <div class="description">
+        <p>
+          では、あなたのストレス度とレジリエンス基本スキルを見てみましょう。
+        </p>
+        <button ion-button round (click)="doAssessment($event)">チェック</button>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <p>「<span class="app-name">レジトレ！</span>」研究に参加を希望される方は、以下の「申込み」ボタンをクリックの上、連絡先を教えて下さい。</p>
+
+      <div>
+        <button ion-button round (click)="confirm($event)" [disabled]="isMailCheck || isFinished">申込み</button>
+      </div>
+
+      <ion-scroll class="attention" scrollY="true">
+        <ul>
+          <li>アンケートの結果は、説明会で同意された場合のみ、研究に使用されます。</li>
+          <li>説明会のご案内を受けるかどうかは、あなたご自身の自由な意思によりお決め下さい。お断りになっても、そのためにご自身が不利益を受けることは一切ありません。</li>
+          <li>いったん説明会のご案内を受けることに同意された後でも、実際に説明会に参加されるかどうかはご自身で自由にお決め下さい。参加されない場合でも、そのことによりあなたには不利益は一切ありません。</li>
+        </ul>
+      </ion-scroll>
+
+    </ion-slide>
+
+    <ion-slide>
+
+      <ion-list>
+        <ion-item>
+          <ion-label floating>メールアドレス</ion-label>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>電話番号（オプション）</ion-label>
+          <ion-input type="tel" [(ngModel)]="phoneNumber"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ul class="register">
+        <li>スマートフォンで受信できるメールアドレスを登録してください</li>
+        <li>電話番号はハイフンなし、数字のみで入力してください</li>
+      </ul>
+
+      <button ion-button round (click)="register($event)">送信</button>
+      
+    </ion-slide>
+
+    <ion-slide>
+      <div class="illustration illustration-mail"></div>
+      <div class="description">
+        <p>
+          連絡先のメールアドレスに登録確認メールを送信しました。このままメールを受信し登録を完了させて下さい。
+        </p>
+        <p>
+          メールが届かない場合、連絡先のメールアドレスに間違いがないか、迷惑メールなどの受信制限が設定されていないかご確認ください。<br>
+          連絡先のメールアドレスに誤りがあった場合、「連絡先の登録」ページに戻り、修正して再度、送信してください。
+        </p>
+        <button ion-button round (click)="finish($event)">確認できました</button>
+      </div>
+
+    </ion-slide>
+
+    <ion-slide>
+      <div class="illustration illustration-finish"></div>
+      <div class="description">
+        <p class="finish">
+          ご登録頂き、ありがとうございます。<br>
+          お疲れ様でした。
+        </p>
+        <button ion-button ion-button full outline (click)="close($event)">閉じる</button>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

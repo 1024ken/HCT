@@ -1,0 +1,21 @@
+<ion-content>
+  <div class="title">
+    <img src="assets/imgs/logo.png" class="logo-image" />
+    <p class="sub">スマホでできるレジリエンスアップ<p>
+    <h2>研究のご案内</h2>
+  </div>
+  <p class="start">
+    <button *ngIf="!isFinished" ion-button full outline (click)="entry($event)">はじめる</button>
+    <button *ngIf="isFinished" ion-button full outline (click)="entry($event)">確認する</button>
+  </p>
+  <div class="info">
+    <p>
+      京都大学　健康科学センター
+      京都大学社会健康医学　健康増進・行動学講座
+    </p>
+    <div class="inquiry">
+      <button ion-button small outline round
+        (click)="inquiry($event)">お問い合せ</button>
+    </div>
+  </div>
+</ion-content>

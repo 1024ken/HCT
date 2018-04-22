@@ -1,0 +1,216 @@
+
+page-entry {
+
+  .slide-zoom {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .app-name {
+    color: #7eb8ff;
+    font-weight: bold;
+    text-shadow: #000 0px 1px 1px
+  }
+
+  div.description {
+    margin: 10px 0;
+    height: 40%;
+  }
+
+  .illustration {
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+  }
+
+  @media screen and (max-height: 600px) {
+    .illustration {
+      height: 150px;
+    }
+  }
+
+  .illustration-app {
+    background-image: url("../assets/imgs/entry_1.png");
+  }
+
+  .illustration-aim {
+    background-image: url("../assets/imgs/entry_4.png");
+  }
+
+  .illustration-use {
+    background-image: url("../assets/imgs/entry_5.png");
+  }
+
+  .illustration-term {
+    background-image: url("../assets/imgs/entry_6.png");
+  }
+
+  .illustration-passing {
+    background-image: url("../assets/imgs/entry_7.png");
+  }
+
+  .illustration-check {
+    background-image: url("../assets/imgs/entry_8.png");
+  }
+
+  .illustration-mail {
+    background-image: url("../assets/imgs/entry_9.png");
+  }
+
+  @media screen and (max-height: 600px) {
+    .illustration-mail {
+      background-image: none;
+      height: 20px;
+    }
+  }
+
+  .illustration-finish {
+    background-image: url("../assets/imgs/entry_10.png");
+  }
+
+  .app-illustration {
+    height: 80%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+  }
+
+  @media screen and (max-height: 600px) {
+    .app-illustration {
+      height: 75%;
+    }
+  }
+
+  .app-illustration-1 {
+    background-image: url("../assets/imgs/entry_2.png");
+  }
+
+  .app-illustration-2 {
+    background-image: url("../assets/imgs/entry_3.png");
+  }
+
+  .app-message {
+    $img-path : "../assets/imgs/app-message";
+    $icon-size: 70px;
+
+    padding: 60px;
+
+    .message {
+      position: relative;
+      margin-top: ($icon-size * 0.25) + 20px;
+      max-width: 100%;
+      font-size: 1.6rem;
+      clear: both;
+
+      float: left;
+      margin-left: $icon-size + 20px;
+      margin-right: auto;
+      padding: 10px 5px;
+      text-align: left;
+
+      &:before {
+        z-index: -1;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: -20px;
+        content: "";
+
+        border-style: solid;
+        border-width: 28px 18px 12px 18px;
+        border-image: url(#{$img-path}/balloon_green_left.png) 56 36 24 36 stretch stretch;
+        -webkit-border-image: url(#{$img-path}/balloon_green_left.png) 56 36 24 36 stretch stretch;
+      }
+
+      &:after {
+        z-index: -1;
+        position: absolute;
+        left: ($icon-size + 15px) * -1;
+        top: ($icon-size * 0.5) * -1;
+        width: $icon-size;
+        height: $icon-size;
+        content:"";
+
+        background-image: url(#{$img-path}/assistant.png);
+        background-size: $icon-size $icon-size;
+        background-position: bottom left;
+      }
+    }
+
+    @media screen and (max-height: 500px) {
+      .message {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .swipe-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    font-size: 40px;
+    opacity: 0;
+    animation: swipe 3s ease 5s infinite;
+  }
+
+  @keyframes swipe {
+    from {
+      transform: translate(80px);
+      opacity: 0;
+    }
+    to {
+      transform: translate(-120px);
+      opacity: 1;
+    }
+  }
+
+  p {
+    margin: 10px 0 10px 0;
+    padding: 0 40px;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  @media screen and (max-height: 500px) {
+    p {
+      font-size: 1.4rem;
+    }
+  }
+
+  ul {
+    margin: 0 0 0 -20px;
+    font-size: 1.4rem;
+    text-align: left;
+    color: #60646B;
+
+    li {
+      margin: 10px 0;
+      padding-right: 5px;
+    }
+  }
+
+  @media screen and (max-height: 500px) {
+    ul {
+      font-size: 1.3rem;
+    }
+  }
+
+  .attention {
+    margin: 10px 35px;
+    height: 55%;
+    border-radius: 6px;
+  }
+
+  .register {
+    margin: 0 10px 0 0;
+  }
+
+  .finish {
+    margin: 20px 0 30px 0;
+    padding: 0 10px;
+    text-align: center;
+  }
+}

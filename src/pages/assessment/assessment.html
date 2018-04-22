@@ -1,0 +1,100 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title *ngIf="status == 'answer'">{{AnswerCount}}/{{QuestionItemCount}}問</ion-title>
+    <ion-title *ngIf="status == 'result1'">ストレス度</ion-title>
+    <ion-title *ngIf="status == 'result2'">スキル</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="status == 'answer'" ion-fixed class="question-progress">
+    <div class="progress" [style.width]="Progress + '%'"></div>
+  </div>
+
+  <div *ngIf="status == 'answer'" class="questions">
+    <div class="group">
+      <div class="description" [innerHTML]="CurrentQuestion.description"></div>
+      <div *ngFor="let item of CurrentQuestion.items; let lastItem = last; let itemIndex = index;"
+        [@fade]="'in'" (@fade.done)="itemFadeInDone($event)">
+        <p>{{item.content}}</p>
+        <ion-list class="answers" radio-group [ngModel]="CurrentQuestion.items[itemIndex].PointString">
+          <ion-item *ngFor="let pointLabel of CurrentQuestion.pointLabels; let point = index;">
+            <ion-radio
+              item-start
+              value="{{point}}"
+              (ionSelect)="answer(item, point, lastItem)"></ion-radio>
+            <ion-label>{{pointLabel}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+    <div class="diagnosis" *ngIf="IsQuestionFinished">
+      <p *ngIf="CurrentQuestionIndex == 1">残り3分の1です<p>
+      <p *ngIf="CurrentQuestionIndex == 2">お疲れ様でした<p>
+      <button *ngIf="CurrentQuestionIndex > 0" ion-button round color="light" (click)="prevQuestion($event)">戻る</button>
+      <button *ngIf="CurrentQuestionIndex < 2" ion-button round (click)="nextQuestion($event)">次へ</button>
+      <button *ngIf="CurrentQuestionIndex == 2"ion-button round (click)="showPHQ9($event)">採点する</button>
+    </div>
+  </div>
+  
+  <div *ngIf="status == 'result1'" class="result result1" [@fade]="'in'">
+      <p>
+        あなたの過去1週間のストレス度は <b [class.danger]="SCIsDanger" [class.warning]="SCIsWarning" [class.health]="SCIsHealth">{{SCPoint}}</b> 点でした。
+      </p>
+      <div class="illustration illustration-result1"></div>
+      <p>統計データによりますと</p>
+      <table>
+        <tr>
+          <td>4点以下：</td>
+          <td>比較的穏やかな心境の人が多いです</td>
+        </tr>
+        <tr>
+          <td>5点～9点：</td>
+          <td>少しストレスを感じている人が多いです</td>
+        </tr>
+        <tr>
+          <td>10点以上：</td>
+          <td>相当ストレスを感じている人が多いです</td>
+        </tr>
+      </table>
+      <button ion-button round (click)="showSkill($event)">スキルの確認</button>
+  </div>
+
+  <div *ngIf="status == 'result2'" class="result result2"[@fade]="'in'">
+    <p>あなたのレジリエンス基本スキルは以下の通りでした。</p>
+    <table>
+      <tr>
+        <td>自己点検スキル：</td>
+        <td class="point"><b>{{SMPoint}}</b>点（15点中）</td>
+      </tr>
+      <tr>
+        <td>行動スキル：</td>
+        <td class="point"><b>{{BAPoint}}</b>点（24点中）</td>
+      </tr>
+      <tr>
+        <td>認知スキル：</td>
+        <td class="point"><b>{{CRPoint}}</b>点（18点中）</td>
+      </tr>
+      <tr>
+        <td>自己表現スキル：</td>
+        <td class="point"><b>{{ATPoint}}</b>点（21点中）</td>
+      </tr>
+      <tr>
+        <td>問題解決スキル：</td>
+        <td class="point"><b>{{PSPoint}}</b>点（18点中）</td>
+      </tr>
+    </table>
+    <div class="illustration illustration-result2"></div>
+    <div>
+      <button ion-button round color="light" (click)="showPHQ9($event)">戻る</button>
+      <button ion-button round (click)="close($event)">閉じる</button>    
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer *ngIf="status == 'answer' && IsPHQ9" no-border>
+  <ion-toolbar>
+    <h6>©kumiko.muramatsu「PHQ-9日本語版」<br>無断転載・改変・複製・電子化、転送化を禁じます</h6>
+  </ion-toolbar>
+</ion-footer>
+

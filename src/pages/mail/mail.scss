@@ -1,0 +1,21 @@
+page-mail {
+  text-align: center;
+
+  .content {
+    background: linear-gradient(to bottom, #F0F4F7 0%, #FFFFFF 50%, #F0F4F7 100%);
+  }
+
+  .title {
+    padding: 20px 0;
+
+    .logo-image {
+      height: 30vh;
+    }
+  }
+
+  p {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}

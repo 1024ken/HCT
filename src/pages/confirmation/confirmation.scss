@@ -1,0 +1,48 @@
+
+page-confirmation {
+
+  ion-header {
+    .toolbar-background, .toolbar-background-md {
+      background-color: #7eb8ff !important;
+    }
+
+    .toolbar-title, .toolbar-title-md {
+      color: #fff;
+    }
+  
+    ion-title {
+      .toolbar-title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .button-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .item-checkbox {
+    .label {
+      font-size: 1.4rem;
+    }
+  }
+
+  ion-list {
+    margin: 10% 0 !important;
+
+    ion-label {
+      white-space: normal;
+    }
+  }
+
+  ion-checkbox {
+    margin-right: 16px !important;
+  }
+
+  button {
+    margin: 0 10px !important;
+  }
+}

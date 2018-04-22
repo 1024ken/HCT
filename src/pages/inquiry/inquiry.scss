@@ -1,0 +1,33 @@
+page-inquiry {
+  ion-header {
+    .toolbar-background, .toolbar-background-md {
+      background-color: #7eb8ff !important;
+    }
+
+    .toolbar-title, .toolbar-title-md {
+      color: #fff;
+    }
+  
+    ion-icon {
+      color: #fff;
+    }
+
+    .back-button-text {
+      color: #fff;
+    }
+  }
+
+  div.contact {
+    margin: 32px 0;
+
+    h3 {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  
+    p {
+      margin-left: 1em;
+      white-space: pre-line;
+    }
+  }
+}

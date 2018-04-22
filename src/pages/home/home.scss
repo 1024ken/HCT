@@ -1,0 +1,54 @@
+page-home {
+  text-align: center;
+
+  .content {
+    background: linear-gradient(to bottom, #F0F4F7 0%, #FFFFFF 50%, #F0F4F7 100%);
+  }
+
+  .title {
+    padding: 20px 0;
+
+    .logo-image {
+      height: 30vh;
+    }
+  
+    .sub {
+      padding: 0;
+      font-size: 1.4rem;
+      font-weight: bold;
+      line-height: 1.5;
+      color: #60646B;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 2.0rem;
+    }
+  }
+
+  .start {
+    margin: 0;
+  }
+
+  @media screen and (min-height: 500px) {
+    .start {
+      margin-top: 10vh;
+      margin-bottom: 10vh;
+    }
+  }
+
+  .info {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+
+    p {
+      font-size: 1.3rem;
+      white-space: pre-line;
+    }
+
+    p.inquiry {
+      white-space: normal;
+    }
+  }
+}

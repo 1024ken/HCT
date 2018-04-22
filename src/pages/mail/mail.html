@@ -1,0 +1,8 @@
+<ion-content>
+  <div class="title">
+    <img src="assets/imgs/logo.png" class="logo-image" />
+  </div>
+  <p *ngIf="status == 'progress'">メールアドレスの確認中です。</p>
+  <p *ngIf="status == 'succeed'">メールアドレスの確認が完了しました。<br>登録完了です。</p>
+  <p *ngIf="status == 'failed'">メールアドレスの確認が失敗しました。</p>
+</ion-content>

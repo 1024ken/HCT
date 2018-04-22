@@ -1,0 +1,31 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title>確認事項</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>京都大学の学部生あるいは大学院生です。</ion-label>
+      <ion-checkbox [(ngModel)]="checks[0]"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>精神的健康についての専門家による治療を受けていません。</ion-label>
+      <ion-checkbox [(ngModel)]="checks[1]"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>メールアドレスの提供に同意します。</ion-label>
+      <ion-checkbox [(ngModel)]="checks[2]"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <div class="button-container">
+    <button ion-button round color="light" (click)="close($event)">戻る</button>
+    <button ion-button round (click)="next($event)" [disabled]="!isApproval">次へ</button>
+  </div>
+
+</ion-content>
